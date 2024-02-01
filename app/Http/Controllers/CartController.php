@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function add($id ,Request $request){
+    public function add($id ,Request $request)
+    {
 
         $attribute = $request->all();        
         $cart_product=new CartProduct;
@@ -23,7 +24,8 @@ class CartController extends Controller
         ]);
     }
 
-    public function cartListPrice($id){
+    public function cartListPrice($id)
+    {
         $cart_products = CartProduct::where('cart_id', $id)->with('product')->get();
         $total_price = 0;
         $products = [];
@@ -82,7 +84,6 @@ class CartController extends Controller
     }
     public function distroyCart($id)
     {
-        dd('asdsadas');
         $cart_products = CartProduct::where('cart_id', $id)->get();
         $cart_products->each->delete();
 
