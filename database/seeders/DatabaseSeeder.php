@@ -159,10 +159,16 @@ class DatabaseSeeder extends Seeder
     private function seedusers()   {
         $user = [
             [
-                'name' => 'admi',
+                'name' => 'admin',
                 'email' => 'admin@123',
                 'password' => '$2y$12$II2/VELMIyA.3R1UBUqK0ed0G6j9mvW9u5eHBZIK08VK5lOAraMYK',
                 
+            ],
+            [
+                'name' => 'admin',
+                'email' => 'admin@1234',
+                'password' => '$2y$12$II2/VELMIyA.3R1UBUqK0ed0G6j9mvW9u5eHBZIK08VK5lOAraMYK',
+
             ],
          
 

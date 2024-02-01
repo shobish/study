@@ -28,14 +28,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', function () {
-  
+    return view('login');
 });
 Route::post('/login',[LoginController::class ,'login']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::delete('/distroy/{cart}', [CartController::class, 'distroyCart']);
 
+Route::get('/products', [ProductController::class, 'index']);
+Route::post('/products', [ProductController::class, 'create']);
+Route::delete('products/{product}', [ProductController::class, 'destroy']);
+Route::get('products/{product}', [ProductController::class, 'show']);
+Route::put('products/{product}', [ProductController::class, 'update']);
+Route::get('/search', [ProductController::class, 'searchProduct']);
 
-
+Route::post('/addproduct/{cart}', [CartController::class, 'add']);
+Route::get('/cart_list/{cart}', [CartController::class, 'cartListPrice']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 

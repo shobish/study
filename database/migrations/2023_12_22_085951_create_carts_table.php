@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unique();
-          
+            $table->unsignedBigInteger('user_id')->unique();          
             $table->foreign('user_id')->references('id')->on('users');
 
 
