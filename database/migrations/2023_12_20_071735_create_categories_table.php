@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('parent_id')->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->text('name');
             $table->mediumText('description')->nullable();
             $table->timestamps();
             $table->foreign('parent_id')->references('id')->on('categories');
-
         });
     }
 
